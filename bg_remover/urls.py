@@ -22,4 +22,6 @@ from remover import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("remove/", views.produce, name="produce"),
+        path("test/", views.test, name="test"),
 ]
+
