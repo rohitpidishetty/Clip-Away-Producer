@@ -54,3 +54,9 @@ def produce(req):
         # Log the exception
         print("Internal error:", str(e))
         return JsonResponse({"message": "Internal server error", "error": str(e)}, status=500)
+
+
+@csrf_exempt
+def test(req):
+    return JsonResponse({"a": 1})
+
