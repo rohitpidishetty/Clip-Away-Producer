@@ -25,7 +25,6 @@ SECRET_KEY = "django-insecure-c++jms)_ta6c6(#c=u*1@od0&y9kuu*i6s-ft#)-%)_^(ju1x$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -115,7 +114,7 @@ USE_TZ = True
 CORS_ALLOW_ALL_ORIGINS = True
 
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000","https://clip-away.web.app"]
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -125,7 +124,7 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
 ]
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://clip-away-producer.vercel.app"]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -135,4 +134,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
