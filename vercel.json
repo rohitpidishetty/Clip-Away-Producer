@@ -1,0 +1,11 @@
+{
+  "builds": [
+    {
+      "src": "bg_remover/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "bg_remover/wsgi.py" }
+  ]
+}
