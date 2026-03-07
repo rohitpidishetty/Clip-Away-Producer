@@ -12,6 +12,8 @@ def produce(req):
         if req.method != "POST":
             return JsonResponse({"message": "Only POST allowed"}, status=405)
 
+        print("Request received")
+
         user = req.POST.get("user")
         job_id = req.POST.get("id")
         timestamp = req.POST.get("timestamp")
@@ -20,13 +22,14 @@ def produce(req):
         image_file = req.FILES.get("image")
 
         if not image_file:
+            print("No image found in request")
             return JsonResponse({"message": "No image provided"}, status=400)
 
-        MAX_SIZE = 5 * 1024 * 1024
-        if image_file.size > MAX_SIZE:
-            return JsonResponse({"message": "File too large"}, status=400)
+        print(f"Image size: {image_file.size}")
 
+        # Encode image
         image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
+
         payload = {
             "user": user,
             "id": job_id,
@@ -38,13 +41,16 @@ def produce(req):
 
         app_channel = config("APP_CHANNEL", default=None)
         if not app_channel:
+            print("APP_CHANNEL not set")
             return JsonResponse({"message": "APP_CHANNEL not set"}, status=500)
 
+        print("Producing payload to MessageNX...")
         mnx.produce(payload, app_channel)
+        print("Payload produced successfully")
 
         return JsonResponse({"message": "pushed"})
 
     except Exception as e:
-        # Log the exception to console (Azure logs)
-        print("Error in /remove/:", str(e))
+        # Log the exception
+        print("Internal error:", str(e))
         return JsonResponse({"message": "Internal server error", "error": str(e)}, status=500)
