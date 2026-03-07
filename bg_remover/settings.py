@@ -121,6 +121,12 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
+
+ALLOWED_HOSTS = [
+    "https://clip-away-producer-bjcufthmg3gzdeaw.eastus2-01.azurewebsites.net",
+    "localhost",
+    "127.0.0.1",
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
@@ -130,3 +136,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
