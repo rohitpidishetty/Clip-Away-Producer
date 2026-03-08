@@ -1,6 +1,7 @@
 # Clip-Away-Producer
 ![Python](https://img.shields.io/badge/python-3.10-blue)
-![AWS EC2](https://img.shields.io/badge/aws-ec2-orange)
+![Vercel](https://img.shields.io/badge/vercel-deployed-black)
+![Azure](https://img.shields.io/badge/azure-enabled-blue)
 ![MessageNX](https://img.shields.io/badge/messagenx-enabled-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
