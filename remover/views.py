@@ -27,8 +27,14 @@ def produce(req):
 
         print(f"Image size: {image_file.size}")
 
+                
+        img = Image.open(image_file)
+        img = img.resize((512, 512))
+        buffer = io.BytesIO()
+        img.save(buffer, format="JPEG", quality=60)  # compressing
+
         # Encode image
-        image_base64 = base64.b64encode(image_file.read()).decode("utf-8")
+        image_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
 
         payload = {
             "user": user,
