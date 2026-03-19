@@ -32,7 +32,7 @@ def produce(req):
         img = Image.open(image_file)
         # img = img.resize((512, 512))
         buffer = io.BytesIO()
-        img.save(buffer, format="JPEG", quality=60)  # compressing
+        img.save(buffer, format="JPEG", quality=60)  # compressing the image before publishing into MessageNX.
 
         # Encode image
         image_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
