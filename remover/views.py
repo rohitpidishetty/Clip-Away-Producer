@@ -30,7 +30,7 @@ def produce(req):
 
                 
         img = Image.open(image_file)
-        img = img.resize((512, 512))
+        # img = img.resize((512, 512))
         buffer = io.BytesIO()
         img.save(buffer, format="JPEG", quality=60)  # compressing
 
