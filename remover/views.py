@@ -2,7 +2,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from com.mnx.MessageNX import MessageNX
 from decouple import config
-import base64
+from PIL import Image
+import io, base64
 
 mnx = MessageNX()
 
